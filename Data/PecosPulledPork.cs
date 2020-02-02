@@ -8,7 +8,7 @@ namespace CowboyCafe.Data
     {
         private bool pickle = true;
         /// <summary>
-        /// If the chili is topped with tortilla strips
+        /// If the sandwich has pickles
         /// </summary>
         public bool Pickle
         {
@@ -17,7 +17,7 @@ namespace CowboyCafe.Data
         }
         private bool bread = true;
         /// <summary>
-        /// If the chili is topped with sour cream
+        /// If the sandwich has bread
         /// </summary>
         public bool Bread
         {
@@ -25,7 +25,7 @@ namespace CowboyCafe.Data
             set { bread = value; }
         }
         /// <summary>
-        /// The price of the double
+        /// The price of the sandwich
         /// </summary>
         public double Price
         {
@@ -36,7 +36,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The calories of the double
+        /// The calories of the sandwich
         /// </summary>
         public uint Calories
         {
@@ -47,7 +47,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Special instructions for the preparation of the double
+        /// Special instructions for the preparation of the sandwich
         /// </summary>
         public List<string> SpecialInstructions
         {

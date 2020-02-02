@@ -8,7 +8,7 @@ namespace CowboyCafe.Data
     {
         private bool cheese = true;
         /// <summary>
-        /// If the chili is topped with cheese
+        /// If the burger is topped with cheese
         /// </summary>
         public bool Cheese
         {
@@ -18,7 +18,7 @@ namespace CowboyCafe.Data
 
         private bool bun = true;
         /// <summary>
-        /// If the chili is topped with sour cream
+        /// If the burger has a bun
         /// </summary>
         public bool Bun
         {
@@ -28,7 +28,7 @@ namespace CowboyCafe.Data
 
         private bool ketchup = true;
         /// <summary>
-        /// If the chili is topped with green onions
+        /// If the burger has ketchup
         /// </summary>
         public bool Ketchup
         {
@@ -38,7 +38,7 @@ namespace CowboyCafe.Data
 
         private bool mustard = true;
         /// <summary>
-        /// If the chili is topped with tortilla strips
+        /// If the burger has mustard
         /// </summary>
         public bool Mustard
         {
@@ -47,7 +47,7 @@ namespace CowboyCafe.Data
         }
         private bool pickle = true;
         /// <summary>
-        /// If the chili is topped with tortilla strips
+        /// If the burger has pickles
         /// </summary>
         public bool Pickle
         {
@@ -56,7 +56,7 @@ namespace CowboyCafe.Data
         }
         private bool tomato = true;
         /// <summary>
-        /// If the chili is topped with green onions
+        /// If the burger has tomato
         /// </summary>
         public bool Tomato
         {
@@ -66,7 +66,7 @@ namespace CowboyCafe.Data
 
         private bool mayo = true;
         /// <summary>
-        /// If the chili is topped with tortilla strips
+        /// If the burger has mayo
         /// </summary>
         public bool Mayo
         {

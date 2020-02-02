@@ -8,18 +8,24 @@ namespace CowboyCafe.Data
     {
         private bool bread = true;
         private bool pickle = true;
+        /// <summary>
+        /// if the sandwich has bread
+        /// </summary>
         public bool Bread
         {
             get { return bread; }
             set { bread = value; }
         }
+        /// <summary>
+        /// if the sandwich has pickles
+        /// </summary>
         public bool Pickle
         {
             get { return pickle; }
             set { pickle = value; }
         }
         /// <summary>
-        /// The price of the double
+        /// The price of the sandwich
         /// </summary>
         public double Price
         {
@@ -30,7 +36,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The calories of the double
+        /// The calories of the sandwich
         /// </summary>
         public uint Calories
         {

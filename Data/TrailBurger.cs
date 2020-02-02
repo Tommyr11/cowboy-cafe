@@ -8,7 +8,7 @@ namespace CowboyCafe.Data
     {
         private bool cheese = true;
         /// <summary>
-        /// If the chili is topped with cheese
+        /// If the burger is topped with cheese
         /// </summary>
         public bool Cheese
         {
@@ -18,7 +18,7 @@ namespace CowboyCafe.Data
 
         private bool bun = true;
         /// <summary>
-        /// If the chili is topped with sour cream
+        /// If the burger has a bun
         /// </summary>
         public bool Bun
         {
@@ -28,7 +28,7 @@ namespace CowboyCafe.Data
 
         private bool ketchup = true;
         /// <summary>
-        /// If the chili is topped with green onions
+        /// If the burger has ketchup on it
         /// </summary>
         public bool Ketchup
         {
@@ -38,7 +38,7 @@ namespace CowboyCafe.Data
 
         private bool mustard = true;
         /// <summary>
-        /// If the chili is topped with tortilla strips
+        /// If the burger has mustard
         /// </summary>
         public bool Mustard
         {
@@ -47,7 +47,7 @@ namespace CowboyCafe.Data
         }
         private bool pickle = true;
         /// <summary>
-        /// If the chili is topped with tortilla strips
+        /// If the burger has pickles
         /// </summary>
         public bool Pickle
         {
@@ -55,7 +55,7 @@ namespace CowboyCafe.Data
             set { pickle = value; }
         }
         /// <summary>
-        /// The price of the double
+        /// The price of the burger
         /// </summary>
         public double Price
         {
@@ -66,7 +66,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The calories of the double
+        /// The calories of the burger
         /// </summary>
         public uint Calories
         {
@@ -77,7 +77,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Special instructions for the preparation of the double
+        /// Special instructions for the preparation of the burger
         /// </summary>
         public List<string> SpecialInstructions
         {
