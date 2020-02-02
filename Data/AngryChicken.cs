@@ -6,8 +6,8 @@ namespace CowboyCafe.Data
 {
     public class AngryChicken
     {
-        public bool bread = true;
-        public bool pickle = true;
+        private bool bread = true;
+        private bool pickle = true;
         public bool Bread
         {
             get { return bread; }
@@ -15,8 +15,8 @@ namespace CowboyCafe.Data
         }
         public bool Pickle
         {
-            get { return Pickle; }
-            set { Pickle = value; }
+            get { return pickle; }
+            set { pickle = value; }
         }
         /// <summary>
         /// The price of the double
@@ -25,7 +25,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 5.20;
+                return 5.99;
             }
         }
 
@@ -36,7 +36,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 464;
+                return 190;
             }
         }
 

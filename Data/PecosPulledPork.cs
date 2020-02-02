@@ -12,17 +12,17 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Pickle
         {
-            get { return Pickle; }
-            set { Pickle = value; }
+            get { return pickle; }
+            set { pickle = value; }
         }
-        private bool bun = true;
+        private bool bread = true;
         /// <summary>
         /// If the chili is topped with sour cream
         /// </summary>
-        public bool Bun
+        public bool Bread
         {
-            get { return Bun; }
-            set { Bun = value; }
+            get { return bread; }
+            set { bread = value; }
         }
         /// <summary>
         /// The price of the double
@@ -31,7 +31,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 6.45;
+                return 5.88;
             }
         }
 
@@ -42,7 +42,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 698;
+                return 528;
             }
         }
 
@@ -56,7 +56,7 @@ namespace CowboyCafe.Data
                 var instructions = new List<string>();
 
                
-                if (!bun) instructions.Add("hold tortilla strips");
+                if (!bread) instructions.Add("hold bread");
                 if (!pickle) instructions.Add("hold pickle");
                 
                 return instructions;
