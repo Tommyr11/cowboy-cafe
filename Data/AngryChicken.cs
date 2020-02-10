@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class AngryChicken
+    public class AngryChicken : Entree
     {
         private bool bread = true;
         private bool pickle = true;
@@ -27,7 +27,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the sandwich
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -38,7 +38,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the sandwich
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -49,7 +49,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the double
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
