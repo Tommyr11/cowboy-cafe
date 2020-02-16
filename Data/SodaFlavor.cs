@@ -1,6 +1,6 @@
 ﻿///Author: Thomas Reece
 ///Project: CowboyCafe
-///Class: Size.cs
+///Class: SodaFlavor.cs
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,12 +8,14 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Enum class for size
+    /// Enum class for soda flavors
     /// </summary>
-    public enum Size
+    public enum SodaFlavor
     {
-        Small,
-        Medium,
-        Large
+        CreamSoda,
+        OrangeSoda,
+        Sarsparilla,
+        BirchBeer,
+        RootBeer
     }
 }

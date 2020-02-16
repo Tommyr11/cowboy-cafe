@@ -1,4 +1,7 @@
-﻿using System;
+﻿///Author: Thomas Reece
+///Project: CowboyCafe
+///Class: CowpokeChili.cs
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data

@@ -1,4 +1,7 @@
-﻿using System;
+﻿///Author: Thomas Reece
+///Project: CowboyCafe
+///Class: Side.cs
+using System;
 using System.Collections.Generic;
 using System.Text;
 

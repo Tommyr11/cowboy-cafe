@@ -1,26 +1,31 @@
 ﻿///Author: Thomas Reece
 ///Project: CowboyCafe
-///Class: Entree.cs
+///Class: Drink.cs
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public abstract class Entree
+    public abstract class Drink
     {
         /// <summary>
-        /// Gets the price of the side
+        /// Gets the price of the Drink
         /// </summary>
         public abstract double Price { get; }
 
+        public bool ice = true;
+        public bool Ice { get { return ice; } set { ice = value; } }
+
+        public virtual Size Size { get; set; }
+
         /// <summary>
-        /// Gets the calories of the entree
+        /// Gets the calories of the Drink
         /// </summary>
         public abstract uint Calories { get; }
 
         /// <summary>
-        /// List of special instructions for the entree
+        /// SpecialInstructions for the drink
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
     }

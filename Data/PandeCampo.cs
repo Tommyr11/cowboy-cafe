@@ -1,4 +1,7 @@
-﻿using System;
+﻿///Author: Thomas Reece
+///Project: CowboyCafe
+///Class: PanDeCampo.cs
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +9,9 @@ namespace CowboyCafe.Data
 {
     public class PandeCampo : Side
     {
+        /// <summary>
+        /// Calories for Pan De Campo
+        /// </summary>
         public override uint Calories 
         {
             get
@@ -23,6 +29,9 @@ namespace CowboyCafe.Data
                 }
             }
         }
+        /// <summary>
+        /// Price for Pan De Campo
+        /// </summary>
         public override double Price
         {
             get
