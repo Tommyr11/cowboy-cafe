@@ -7,8 +7,27 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    
     public class TexasTea : Drink
     {
+        /// <summary>
+        /// To string for Texas Tea
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case Size.Large:
+                    return "Large Texas Tea";
+                case Size.Medium:
+                    return "Medium Texas Tea";
+                case Size.Small:
+                    return "Small Texas Tea";
+                default:
+                    throw new NotImplementedException("Unknown size");
+            }
+        }
         /// <summary>
         /// bool for if tea is sweet
         /// </summary>

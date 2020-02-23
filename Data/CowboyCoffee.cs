@@ -10,6 +10,42 @@ namespace CowboyCafe.Data
     public class CowboyCoffee : Drink
     {
         /// <summary>
+        /// To string for Cowboy Coffee
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            if (decaf)
+            {
+                switch (Size)
+                {
+                    case Size.Large:
+                        return "Large Decaf Cowboy Coffee";
+                    case Size.Medium:
+                        return "Medium Decaf Cowboy Coffee";
+                    case Size.Small:
+                        return "Small Decaf Cowboy Coffee";
+                    default:
+                        throw new NotImplementedException("Unknown size");
+                }
+            }
+            else
+            {
+                switch (Size)
+                {
+                    case Size.Large:
+                        return "Large Cowboy Coffee";
+                    case Size.Medium:
+                        return "Medium Cowboy Coffee";
+                    case Size.Small:
+                        return "Small Cowboy Coffee";
+                    default:
+                        throw new NotImplementedException("Unknown size");
+                }
+            }
+           
+        }
+        /// <summary>
         /// Bool cream shows if there is cream in the coffe or not
         /// </summary>
         private bool cream = true;
@@ -18,6 +54,26 @@ namespace CowboyCafe.Data
         {
             get { return cream; }
             set { cream = value; }
+        }
+        /// <summary>
+        /// Bool cream shows if there is ice in the coffe or not
+        /// </summary>
+        private bool ice = false;
+
+        public bool Ice
+        {
+            get { return ice; }
+            set { ice = value; }
+        }
+        /// <summary>
+        /// Bool cream shows if there is cream in the coffe or not
+        /// </summary>
+        private bool decaf = true;
+
+        public bool Decaf
+        {
+            get { return decaf; }
+            set { decaf = value; }
         }
         /// <summary>
         /// Calories in the coffee

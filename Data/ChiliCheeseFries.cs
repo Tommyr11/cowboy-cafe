@@ -10,6 +10,24 @@ namespace CowboyCafe.Data
     public class ChiliCheeseFries : Side
     {
         /// <summary>
+        /// To string for Chili Cheese Fries
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case Size.Large:
+                    return "Large Chili Cheese Fries";
+                case Size.Medium:
+                    return "Medium Chili Cheese Fries";
+                case Size.Small:
+                    return "Small Chili Cheese Fries";
+                default:
+                    throw new NotImplementedException("Unknown size");
+            }
+        }
+        /// <summary>
         /// Calories for Chili Cheese Fries
         /// </summary>
         public override uint Calories

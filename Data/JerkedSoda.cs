@@ -10,6 +10,81 @@ namespace CowboyCafe.Data
     public class JerkedSoda : Drink
     {
         /// <summary>
+        /// Override ToString() for jerked soda
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+
+            switch (flavor)
+            {
+                case SodaFlavor.BirchBeer:
+                    switch (Size)
+                    {
+                        case Size.Large:
+                            return "Large Birch Beer Jerked Soda";
+                        case Size.Medium:
+                            return "Medium Birch Beer Jerked Soda";
+                        case Size.Small:
+                            return "Small Birch Beer Jerked Soda";
+                        default:
+                            throw new NotImplementedException("Unknown size");
+                    }
+                case SodaFlavor.CreamSoda:
+                    switch (Size)
+                    {
+                        case Size.Large:
+                            return "Large Cream Soda Jerked Soda";
+                        case Size.Medium:
+                            return "Medium Cream Soda Jerked Soda";
+                        case Size.Small:
+                            return "Small Cream soda Jerked Soda";
+                        default:
+                            throw new NotImplementedException("Unknown size");
+                    }
+                case SodaFlavor.OrangeSoda:
+                    switch (Size)
+                    {
+                        case Size.Large:
+                            return "Large Orange Soda Jerked Soda";
+                        case Size.Medium:
+                            return "Medium Orange Soda Jerked Soda";
+                        case Size.Small:
+                            return "Small Orange Soda Jerked Soda";
+                        default:
+                            throw new NotImplementedException("Unknown size");
+                    }
+                case SodaFlavor.RootBeer:
+                    switch (Size)
+                    {
+                        case Size.Large:
+                            return "Large Root Beer Jerked Soda";
+                        case Size.Medium:
+                            return "Medium Root Beer Jerked Soda";
+                        case Size.Small:
+                            return "Small Root Beer Jerked Soda";
+                        default:
+                            throw new NotImplementedException("Unknown size");
+                    }
+                case SodaFlavor.Sarsparilla:
+                    switch (Size)
+                    {
+                        case Size.Large:
+                            return "Large Sarsparilla Jerked Soda";
+                        case Size.Medium:
+                            return "Medium Sarsparilla Jerked Soda";
+                        case Size.Small:
+                            return "Small Sarsparilla Jerked Soda";
+                        default:
+                            throw new NotImplementedException("Unknown size");
+                    }
+                default:
+                    return "Unrecognizable Item";
+            }
+                
+
+        }
+        /// <summary>
         /// Flavor of Jerked Soda
         /// </summary>
         private SodaFlavor flavor;

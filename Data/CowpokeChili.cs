@@ -11,6 +11,14 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CowpokeChili : Entree
     {
+        /// <summary>
+        /// To string for Cowpoke Chili
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Cowpoke Chili";
+        }
         private bool cheese = true;
         /// <summary>
         /// If the chili is topped with cheese

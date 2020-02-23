@@ -10,6 +10,24 @@ namespace CowboyCafe.Data
     public class CornDodgers : Side
     {
         /// <summary>
+        /// To string for Chili Cheese Fries
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case Size.Large:
+                    return "Large Corn Dodgers";
+                case Size.Medium:
+                    return "Medium Corn Dodgers";
+                case Size.Small:
+                    return "Small Corn Dodgers";
+                default:
+                    throw new NotImplementedException("Unknown size");
+            }
+        }
+        /// <summary>
         /// Calories property field for CornDodgers
         /// </summary>
         public override uint Calories

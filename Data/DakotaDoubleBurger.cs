@@ -7,8 +7,17 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    
     public class DakotaDoubleBurger : Entree
     {
+        /// <summary>
+        /// To string for Dakota Double Burger
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Dakota Double Burger";
+        }
         private bool cheese = true;
         /// <summary>
         /// If the burger is topped with cheese
