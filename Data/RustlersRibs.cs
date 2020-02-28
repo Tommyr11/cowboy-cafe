@@ -15,7 +15,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return "RustlersRibs's Ribs";
+            return "Rustler's Ribs";
         }
         /// <summary>
         /// The price of the ribs

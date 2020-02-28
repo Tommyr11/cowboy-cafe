@@ -38,7 +38,7 @@ namespace CowboyCafe.Data
                         case Size.Medium:
                             return "Medium Cream Soda Jerked Soda";
                         case Size.Small:
-                            return "Small Cream soda Jerked Soda";
+                            return "Small Cream Soda Jerked Soda";
                         default:
                             throw new NotImplementedException("Unknown size");
                     }

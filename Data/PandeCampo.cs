@@ -7,7 +7,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class PandeCampo : Side
+    public class PanDeCampo : Side
     {
         /// <summary>
         /// To string for Chili Cheese Fries

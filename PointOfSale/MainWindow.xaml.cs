@@ -87,7 +87,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddPanDeCampo_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new PandeCampo());
+            OrderList.Items.Add(new PanDeCampo());
         }
         /// <summary>
         /// Adds Baked Beans to the ListView

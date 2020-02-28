@@ -15,7 +15,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return "Trail Burger";
+            return "Texas Triple Burger";
         }
         private bool bacon = true;
         /// <summary>

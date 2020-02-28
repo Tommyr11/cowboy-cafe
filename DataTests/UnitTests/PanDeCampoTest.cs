@@ -11,21 +11,21 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()
         {
-            PandeCampo pdc = new PandeCampo();
+            PanDeCampo pdc = new PanDeCampo();
             Assert.Equal(1.59, pdc.Price);
         }
 
         [Fact]
         public void ShouldHaveCorrectDefaultCalories()
         {
-            PandeCampo pdc = new PandeCampo();
+            PanDeCampo pdc = new PanDeCampo();
             Assert.Equal<uint>(227, pdc.Calories);
         }
 
         [Fact]
         public void ShouldHaveCorrectDefaultSize()
         {
-            PandeCampo pdc = new PandeCampo();
+            PanDeCampo pdc = new PanDeCampo();
             Assert.Equal<Size>(Size.Small, pdc.Size);
         }
 
@@ -35,7 +35,7 @@ namespace CowboyCafe.DataTests
         [InlineData(Size.Large, 1.99)]
         public void ShouldUseCorrectPriceForSize(Size size, double price)
         {
-            PandeCampo pdc = new PandeCampo();
+            PanDeCampo pdc = new PanDeCampo();
             pdc.Size = Size.Medium;
             pdc.Size = size;
             Assert.Equal(price, pdc.Price);
@@ -47,7 +47,7 @@ namespace CowboyCafe.DataTests
         [InlineData(Size.Large, 367)]
         public void ShouldUseCorrectCaloriesForSize(Size size, uint calories)
         {
-            PandeCampo pdc = new PandeCampo();
+            PanDeCampo pdc = new PanDeCampo();
             pdc.Size = Size.Medium;
             pdc.Size = size;
             Assert.Equal<uint>(calories, pdc.Calories);

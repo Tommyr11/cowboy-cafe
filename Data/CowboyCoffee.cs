@@ -68,7 +68,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Bool cream shows if there is cream in the coffe or not
         /// </summary>
-        private bool decaf = true;
+        private bool decaf = false;
 
         public bool Decaf
         {
