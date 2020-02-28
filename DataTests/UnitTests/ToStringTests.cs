@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
-/*
+
 namespace CowboyCafe.DataTests
 {
     public class ToStringTests
@@ -32,9 +32,9 @@ namespace CowboyCafe.DataTests
         [InlineData(typeof(CornDodgers), Size.Small, "Small Corn Dodgers")]
         [InlineData(typeof(CornDodgers), Size.Medium, "Medium Corn Dodgers")]
         [InlineData(typeof(CornDodgers), Size.Large, "Large Corn Dodgers")]
-        [InlineData(typeof(PanDeCampo), Size.Small, "Small Pan de Campo")]
-        [InlineData(typeof(PanDeCampo), Size.Medium, "Medium Pan de Campo")]
-        [InlineData(typeof(PanDeCampo), Size.Large, "Large Pan de Campo")]
+        [InlineData(typeof(PandeCampo), Size.Small, "Small Pan de Campo")]
+        [InlineData(typeof(PandeCampo), Size.Medium, "Medium Pan de Campo")]
+        [InlineData(typeof(PandeCampo), Size.Large, "Large Pan de Campo")]
         public void SideToStringShouldMatchExpectations(Type type, Size size, string expected)
         {
             Side side = Activator.CreateInstance(type) as Side;
@@ -117,4 +117,4 @@ namespace CowboyCafe.DataTests
 
     }
 }
-*/
+
