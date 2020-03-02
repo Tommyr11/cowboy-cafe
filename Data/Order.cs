@@ -7,13 +7,38 @@ namespace CowboyCafe.Data
 {
     public class Order : INotifyPropertyChanged 
     {
+        /// <summary>
+        /// Property changed event variable that signals something was changed
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
-        private double subtotal = 0;
+        /// <summary>
+        /// Private backing for subtotal
+        /// </summary>
+        public double subtotal = 0;
+        /// <summary>
+        /// Subtotal for the order
+        /// </summary>
         public double Subtotal => subtotal;
-        private uint lastordernumber;
-        public uint OrderNumber { get; }
+        /// <summary>
+        /// Private backing to keep track of the last order number
+        /// </summary>
+        static private uint lastordernumber = 1;
+        /// <summary>
+        /// Number for the current order
+        /// </summary>
+        public uint OrderNumber => lastordernumber++;
+        /// <summary>
+        /// private backing for items list
+        /// </summary>
         private List<IOrderItem> items = new List<IOrderItem>();
+        /// <summary>
+        /// Public list of items
+        /// </summary>
         public IEnumerable<IOrderItem> Items => items.ToArray();
+        /// <summary>
+        ///  Adds an item to the item list
+        /// </summary>
+        /// <param name="i"></param>
         public void Add(IOrderItem i)
         {
             items.Add(i);
@@ -22,6 +47,10 @@ namespace CowboyCafe.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
  
         }
+        /// <summary>
+        /// Removes an item from the items list
+        /// </summary>
+        /// <param name="i"></param>
         public void Remove(IOrderItem i) 
         {
             items.Remove(i);

@@ -44,6 +44,7 @@
         <TextBlock Grid.Row="2" Text="Subtotal"></TextBlock>
         <TextBlock Grid.Row="2" Text="{Binding Path=Subtotal, StringFormat=c}" HorizontalAlignment="Right"></TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Order"></TextBlock>
+        <TextBlock Grid.Row="0" Text="{Binding Path=OrderNumber}" HorizontalAlignment="Right"></TextBlock>
 
     </Grid>
 

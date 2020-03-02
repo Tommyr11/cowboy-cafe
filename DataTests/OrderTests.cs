@@ -71,7 +71,7 @@ namespace CowboyCafe.DataTests
             Assert.Equal(total, order.subtotal);
         }
         [Theory]
-        [InlineData("Price")]
+        [InlineData("Subtotal")]
         [InlineData("Items")]
         public void AddingAnItemShouldTriggerPropertyChanged(string propertyName)
         {
@@ -80,7 +80,7 @@ namespace CowboyCafe.DataTests
             Assert.PropertyChanged(order, propertyName, () => { order.Add(item); });
         }
         [Theory]
-        [InlineData("Price")]
+        [InlineData("Subtotal")]
         [InlineData("Items")]
         public void RemovingAnItemShouldTriggerPropertyChanged(string propertyName)
         {

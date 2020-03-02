@@ -21,11 +21,43 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Main Window initializer
+        /// </summary>
         public MainWindow()
         {
             var order = new Order();
             this.DataContext = order;
             InitializeComponent();
+
+        }
+        /// <summary>
+        /// For future purposes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ItemSelection_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        /// <summary>
+        /// Completes the order and begins a new one
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CompleteOrder_Click(object sender, RoutedEventArgs e)
+        {
+            
+            this.DataContext = new Order();
+        }
+        /// <summary>
+        /// Cancels the order and begins a new one
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CancelOrder_Click(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new Order();
 
         }
     }

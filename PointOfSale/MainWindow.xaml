@@ -8,12 +8,16 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition />
             <ColumnDefinition Width="200"/>
 
         </Grid.ColumnDefinitions>
-        <local:OrderSummaryControl Grid.Column="1"/>
-        <local:MenuItemSelectionControl Grid.Column="0"/>
 
+        <local:OrderSummaryControl Grid.Column="1"/>
+        <local:MenuItemSelectionControl Grid.Column="0" VerticalAlignment="Center"/>
+        <Button x:Name="CompleteOrder" VerticalAlignment="Top" HorizontalAlignment="Center" Height="63" Click="CompleteOrder_Click" >Complete Order</Button>
+        <Button x:Name="CancelOrder" VerticalAlignment="Top" HorizontalAlignment="Right" Height="63" Click="CancelOrder_Click" >Cancel Order</Button>
+        <Button x:Name="ItemSelection" VerticalAlignment="Top" HorizontalAlignment="Left" Height="63" Click="ItemSelection_Click" >Item Selection</Button>
+        
     </Grid>
 </Window>
