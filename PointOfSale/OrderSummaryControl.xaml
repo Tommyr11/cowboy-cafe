@@ -16,7 +16,7 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        <ListBox  Name="PList" Grid.Row="1" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Path=Items}">
+        <ListBox  Name="PList" ItemsSource="{Binding Path=Items}" Grid.Row="1" HorizontalContentAlignment="Stretch" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -41,7 +41,8 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Subtotal"></TextBlock>
+        <TextBlock Grid.Row="2" Text="Subtotal"></TextBlock>
+        <TextBlock Grid.Row="2" Text="{Binding Path=Subtotal, StringFormat=c}" HorizontalAlignment="Right"></TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Order"></TextBlock>
 
     </Grid>

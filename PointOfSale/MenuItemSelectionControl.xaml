@@ -17,7 +17,7 @@
             <Button Name="AddAngryChicken" AutomationProperties.Name="AddAngryChicken" Click="AddAngryChicken_Click">Angry Chicken</Button>
             <Button Name="AddRustlersRibs" Click="AddRustlersRibs_Click">Rustlers Ribs</Button>
             <Button Name="AddPecosPulledPork" Click="AddPecosPulledPork_Click">Pecos Pulled Pork</Button>
-            <Button Name="TrailBurger" Click="TrailBurger_Click">Trail Burger</Button>
+            <Button Name="AddTrailBurger" Click="AddTrailBurger_Click">Trail Burger</Button>
             <Button Name="AddDakotaDoubleBurger" Click="AddDakotaDoubleBurger_Click">Dakota Double Burger</Button>
             <Button Name="AddTexasTripleBurger" Click="AddTexasTripleBurger_Click">Texas Triple Burger</Button>
             <Button Name="AddCowpokeChili" Click="AddCowpokeChili_Click">Cowpoke Chili</Button>

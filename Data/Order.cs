@@ -11,6 +11,7 @@ namespace CowboyCafe.Data
         private double subtotal = 0;
         public double Subtotal => subtotal;
         private uint lastordernumber;
+        public uint OrderNumber { get; }
         private List<IOrderItem> items = new List<IOrderItem>();
         public IEnumerable<IOrderItem> Items => items.ToArray();
         public void Add(IOrderItem i)

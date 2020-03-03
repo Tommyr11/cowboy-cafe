@@ -22,21 +22,8 @@ namespace PointOfSale
         public MenuItemSelectionControl()
         {
             InitializeComponent();
-            AddAngryChicken.Click += AddAngryChicken_Click;
-            AddBakedBeans.Click += AddBakedBeans_Click;
-            AddChiliCheeseFries.Click += AddChiliCheeseFries_Click;
-            AddCornDodgers.Click += AddCornDodgers_Click;
-            AddCowboyCoffee.Click += AddCowboyCoffee_Click;
-            AddCowpokeChili.Click += AddCowpokeChili_Click;
-            AddDakotaDoubleBurger.Click += AddDakotaDoubleBurger_Click;
-            AddJerkedSoda.Click += AddJerkedSoda_Click;
-            AddPanDeCampo.Click += AddPanDeCampo_Click;
-            AddPecosPulledPork.Click += AddPecosPulledPork_Click;
-            AddRustlersRibs.Click += AddRustlersRibs_Click;
-            AddTexasTea.Click += AddTexasTea_Click;
-            AddTexasTripleBurger.Click += AddTexasTripleBurger_Click;
-            AddWater.Click += AddWater_Click;
-    }
+            
+        }
         public Order order = new Order();
 
         /// <summary>
@@ -176,7 +163,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TrailBurger_Click(object sender, RoutedEventArgs e)
+        private void AddTrailBurger_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
             {
