@@ -36,10 +36,9 @@ namespace PointOfSale
             AddTexasTea.Click += AddTexasTea_Click;
             AddTexasTripleBurger.Click += AddTexasTripleBurger_Click;
             AddWater.Click += AddWater_Click;
-
-
-        }
+    }
         public Order order = new Order();
+
         /// <summary>
         /// Adds Jerked Soda to the listview
         /// </summary>

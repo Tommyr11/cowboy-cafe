@@ -6,17 +6,17 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="200">
-    <Grid ShowGridLines="True">
+    <Grid >
         <Grid.ColumnDefinitions >
-            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        
-        <ListBox Name="PList" Grid.Row="1" Margin="0,0,-40,0" HorizontalContentAlignment="Stretch">
+
+        <ListBox  Name="PList" Grid.Row="1" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Path=Items}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -31,7 +31,7 @@
                         <TextBlock Text="{Binding}" Grid.Column="0" Grid.Row="0">
                             
                         </TextBlock>
-                        <TextBlock Text="{Binding Path = Subtotal, StringFormat=c}" Grid.Column="1" Grid.Row="0" >
+                        <TextBlock Text="{Binding Path = Price, StringFormat=c}" Grid.Column="1" Grid.Row="0" >
 
                         </TextBlock>
                         <ListView ItemsSource="{Binding Path = SpecialInstructions}" Grid.Column="0" Grid.Row="1">
@@ -41,7 +41,9 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Subtotal"></TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Order"></TextBlock>
+
     </Grid>
 
 </UserControl>

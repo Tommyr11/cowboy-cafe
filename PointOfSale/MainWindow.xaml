@@ -13,7 +13,7 @@
 
         </Grid.ColumnDefinitions>
         <local:OrderSummaryControl Grid.Column="1"/>
-        <local:MenuItemSelectionControl Grid.Column="0" Margin="0,69,0,0" />
+        <local:MenuItemSelectionControl Grid.Column="0"/>
 
     </Grid>
 </Window>
