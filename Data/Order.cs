@@ -42,6 +42,10 @@ namespace CowboyCafe.Data
         public void Add(IOrderItem i)
         {
             items.Add(i);
+            if(i is INotifyPropertyChanged pcItem)
+            {
+                pcItem.PropertyChanged += OnItemChanged;
+            }
             subtotal += i.Price;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
@@ -54,10 +58,19 @@ namespace CowboyCafe.Data
         public void Remove(IOrderItem i) 
         {
             items.Remove(i);
+            if (i is INotifyPropertyChanged pcItem)
+            {
+                pcItem.PropertyChanged -= OnItemChanged;
+            }
             subtotal -= i.Price;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
 
+        }
+        private void OnItemChanged(object sender, PropertyChangedEventArgs e)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            if (e.PropertyName == "Price") PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
     }
 }

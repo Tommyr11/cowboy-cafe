@@ -11,6 +11,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using PointOfSale.Customization_Screens;
+using PointOfSale.ExtensionMethods;
 
 namespace PointOfSale
 {
@@ -129,9 +131,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddAngryChicken_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<MainWindow>();
             if (DataContext is Order order)
             {
-                order.Add(new TexasTea());
+                var item = new AngryChicken();
+                var screen = new AngryChickenCustomization();
+                screen.DataContext = item;
+                order.Add(item);
+                orderControl?.SwapScreen(screen);
             }
         }
         /// <summary>
@@ -143,7 +150,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Add(new TexasTea());
+                order.Add(new RustlersRibs());
             }
         }
         /// <summary>
@@ -153,9 +160,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddPecosPulledPork_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<MainWindow>();
             if (DataContext is Order order)
             {
-                order.Add(new TexasTea());
+                var item = new PecosPulledPork();
+                var screen = new PecosPulledPorkCustomization();
+                screen.DataContext = item;
+                order.Add(item);
+                orderControl?.SwapScreen(screen);
             }
         }
         /// <summary>
@@ -165,9 +177,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddTrailBurger_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<MainWindow>();
             if (DataContext is Order order)
             {
-                order.Add(new TexasTea());
+                var item = new TrailBurger();
+                var screen = new TrailBurgerCustomization();
+                screen.DataContext = item;
+                order.Add(item);
+                orderControl?.SwapScreen(screen);
             }
         }
         /// <summary>
@@ -177,9 +194,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<MainWindow>();
             if (DataContext is Order order)
             {
-                order.Add(new TexasTea());
+                var item = new DakotaDoubleBurger();
+                var screen = new DakotaDoubleBurgerCustomization();
+                screen.DataContext = item;
+                order.Add(item);
+                orderControl?.SwapScreen(screen);
             }
         }
         /// <summary>
@@ -189,9 +211,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<MainWindow>();
             if (DataContext is Order order)
             {
-                order.Add(new TexasTea());
+                var item = new TexasTripleBurger();
+                var screen = new TexasTripleBurgerCustomization();
+                screen.DataContext = item;
+                order.Add(item);
+                orderControl?.SwapScreen(screen);
             }
         }
         /// <summary>
@@ -201,9 +228,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<MainWindow>();
             if (DataContext is Order order)
             {
-                order.Add(new TexasTea());
+                var item = new CowpokeChili();
+                var screen = new CowpokeChiliCustomization();
+                screen.DataContext = item;
+                order.Add(item);
+                orderControl?.SwapScreen(screen);
             }
         }
     }

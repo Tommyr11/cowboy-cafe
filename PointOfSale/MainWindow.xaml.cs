@@ -38,7 +38,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Container.Child = new MenuItemSelectionControl();
         }
         /// <summary>
         /// Completes the order and begins a new one
@@ -59,6 +59,10 @@ namespace PointOfSale
         {
             this.DataContext = new Order();
 
+        }
+        public void SwapScreen(FrameworkElement element)
+        {
+            Container.Child = element;
         }
     }
 }
