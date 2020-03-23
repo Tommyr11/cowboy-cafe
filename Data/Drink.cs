@@ -15,7 +15,7 @@ namespace CowboyCafe.Data
         public abstract double Price { get; }
 
         public bool ice = true;
-        public bool Ice { get { return ice; } set { ice = value; } }
+        public virtual bool Ice { get { return ice; } set { ice = value; } }
 
         public virtual Size Size { get; set; }
 

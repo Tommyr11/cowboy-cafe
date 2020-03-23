@@ -4,12 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     
-    public class TexasTea : Drink
+    public class TexasTea : Drink, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// To string for Texas Tea
         /// </summary>
@@ -46,14 +48,32 @@ namespace CowboyCafe.Data
             }
             
         }
+        private Size size = Size.Small;
+        /// <summary>
+        /// The Size of the Side
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                ToString();
+
+            }
+        }
         /// <summary>
         /// bool for if tea is sweet
         /// </summary>
         private bool sweet = true;
         public bool Sweet {
             get { return sweet; }
-            set { sweet = value; } 
-            }
+            set { sweet = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sweet"));
+                ToString();
+            } 
+        }
         /// <summary>
         /// bool for if drink has lemon
         /// </summary>
@@ -61,7 +81,24 @@ namespace CowboyCafe.Data
         public bool Lemon
         {
             get { return lemon; }
-            set { lemon = value; }
+            set { lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+        /// <summary>
+        /// bool for if drink has ice
+        /// </summary>
+        private bool ice = false;
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
         /// <summary>
         /// Calories of the tea

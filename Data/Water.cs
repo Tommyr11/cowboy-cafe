@@ -4,11 +4,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class Water : Drink
+    public class Water : Drink, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// To string for Water
         /// </summary>
@@ -27,6 +29,26 @@ namespace CowboyCafe.Data
                     throw new NotImplementedException("Unknown size");
             }
         }
+        private bool ice = true;
+        public override bool Ice { get { return ice; } set { ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            } }
+        private Size size = Size.Small;
+        /// <summary>
+        /// The Size of the Side
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                ToString();
+
+            }
+        }
         /// <summary>
         /// bool for if the drink has a lemon
         /// </summary>
@@ -34,7 +56,10 @@ namespace CowboyCafe.Data
         public bool Lemon
         {
             get { return lemon; }
-            set { lemon = value; }
+            set { lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
         /// <summary>
         /// calories for the drink

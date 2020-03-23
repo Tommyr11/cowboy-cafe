@@ -9,7 +9,7 @@
     <StackPanel>
         <TextBlock FontSize="40" HorizontalAlignment="Center">Customize the Pecos Pulled Pork</TextBlock>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Pickles}"/>
+            <CheckBox IsChecked="{Binding Pickle}"/>
             <TextBlock FontSize="20" Text="Pickles"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">

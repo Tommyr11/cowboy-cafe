@@ -13,15 +13,17 @@ using System.Windows.Shapes;
 using CowboyCafe.Data;
 using Size = CowboyCafe.Data.Size;
 
-
 namespace PointOfSale.Customization_Screens
 {
     /// <summary>
-    /// Interaction logic for CowboyCoffeeCustomization.xaml
+    /// Interaction logic for CustomizeCornDodgers.xaml
     /// </summary>
-    public partial class CowboyCoffeeCustomization : UserControl
+    public partial class ChiliCheeseFriesCustomization : UserControl
     {
-        public CowboyCoffeeCustomization()
+        /// <summary>
+        /// Constructor initializing components 
+        /// </summary>
+        public ChiliCheeseFriesCustomization()
         {
             InitializeComponent();
             SmallRadioButton.Checked += OnSize_Checked;
@@ -36,20 +38,20 @@ namespace PointOfSale.Customization_Screens
         /// <param name="args">Event argument.</param>
         private void OnSize_Checked(object sender, RoutedEventArgs args)
         {
-            if (DataContext is CowboyCoffee pan)
+            if (DataContext is ChiliCheeseFries chili)
             {
                 if (sender is RadioButton rb)
                 {
                     switch (rb.Tag)
                     {
                         case "Small":
-                            pan.Size = Size.Small;
+                            chili.Size = Size.Small;
                             break;
                         case "Medium":
-                            pan.Size = Size.Medium;
+                            chili.Size = Size.Medium;
                             break;
                         case "Large":
-                            pan.Size = Size.Large;
+                            chili.Size = Size.Large;
                             break;
                         default:
                             throw new NotImplementedException("Size not Avialable");
@@ -59,3 +61,5 @@ namespace PointOfSale.Customization_Screens
         }
     }
 }
+
+

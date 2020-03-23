@@ -4,11 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+
 
 namespace CowboyCafe.Data
 {
-    public class CowboyCoffee : Drink
+    public class CowboyCoffee : Drink, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// To string for Cowboy Coffee
         /// </summary>
@@ -45,6 +48,21 @@ namespace CowboyCafe.Data
             }
            
         }
+        private Size size = Size.Small;
+        /// <summary>
+        /// The Size of the Side
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                ToString();
+
+            }
+        }
         /// <summary>
         /// Bool cream shows if there is cream in the coffe or not
         /// </summary>
@@ -53,17 +71,23 @@ namespace CowboyCafe.Data
         public bool RoomForCream
         {
             get { return cream; }
-            set { cream = value; }
+            set { cream = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
         /// <summary>
         /// Bool cream shows if there is ice in the coffe or not
         /// </summary>
         private bool ice = false;
 
-        public bool Ice
+        public override bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set { ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
         /// <summary>
         /// Bool cream shows if there is cream in the coffe or not
@@ -73,7 +97,10 @@ namespace CowboyCafe.Data
         public bool Decaf
         {
             get { return decaf; }
-            set { decaf = value; }
+            set { decaf = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                ToString();
+            }
         }
         /// <summary>
         /// Calories in the coffee

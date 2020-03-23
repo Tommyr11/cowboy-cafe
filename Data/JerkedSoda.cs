@@ -4,11 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+
 
 namespace CowboyCafe.Data
 {
-    public class JerkedSoda : Drink
+    public class JerkedSoda : Drink, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// Override ToString() for jerked soda
         /// </summary>
@@ -85,13 +88,45 @@ namespace CowboyCafe.Data
 
         }
         /// <summary>
+        /// Size of the soda
+        /// </summary>
+        private Size size = Size.Small;
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                ToString();
+
+            }
+        }
+        /// <summary>
         /// Flavor of Jerked Soda
         /// </summary>
         private SodaFlavor flavor;
         public SodaFlavor Flavor
         {
             get { return flavor; }
-            set { flavor = value; }
+            set { flavor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                ToString();
+            }
+        }
+        /// <summary>
+        /// Ice in the soda
+        /// </summary>
+        private bool ice = true;
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
         /// <summary>
         /// Calories in Jerked Soda

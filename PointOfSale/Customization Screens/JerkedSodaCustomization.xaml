@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="PointOfSale.Customization_Screens.JerkedSodaCustomization"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale.Customization_Screens"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <TextBlock FontSize="30" Text="Jerked Soda" FontFamily="Baskerville Old Face"/>
+        <TextBlock FontSize="25">Drink Sizes:</TextBlock>
+        <StackPanel Orientation="Vertical">
+            <RadioButton GroupName="s" Name="SmallRadioButton" FontSize="10" Tag="Small">Small</RadioButton>
+            <RadioButton GroupName="s" Name="MediumRadioButton" FontSize="10" Tag="Medium">Medium</RadioButton>
+            <RadioButton GroupName="s" Name="LargeRadioButton" FontSize="10" Tag="Large">Large</RadioButton>
+        </StackPanel>
+        <TextBlock FontSize="25">Soda Flavors</TextBlock>
+        <StackPanel Orientation="Vertical">
+            <RadioButton GroupName="f" Name="BB" FontSize="10" Tag="BB">Birch Beer</RadioButton>
+            <RadioButton GroupName="f" Name="CS" FontSize="10" Tag="CS">Cream Soda</RadioButton>
+            <RadioButton GroupName="f" Name="OS" FontSize="10" Tag="OS">Orange Soda</RadioButton>
+            <RadioButton GroupName="f" Name="SS" FontSize="10" Tag="SS">Sarsparilla</RadioButton>
+            <RadioButton GroupName="f" Name="RB" FontSize="10" Tag="RB">Root Beer</RadioButton>
+        </StackPanel>
+        <TextBlock FontSize="20">Customizations</TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <CheckBox IsChecked="{Binding Ice}"/>
+            <TextBlock FontSize="10" Text="Ice"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

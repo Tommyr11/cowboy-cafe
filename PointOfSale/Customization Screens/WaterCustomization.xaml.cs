@@ -13,15 +13,14 @@ using System.Windows.Shapes;
 using CowboyCafe.Data;
 using Size = CowboyCafe.Data.Size;
 
-
 namespace PointOfSale.Customization_Screens
 {
     /// <summary>
-    /// Interaction logic for CowboyCoffeeCustomization.xaml
+    /// Interaction logic for WaterCustomization.xaml
     /// </summary>
-    public partial class CowboyCoffeeCustomization : UserControl
+    public partial class WaterCustomization : UserControl
     {
-        public CowboyCoffeeCustomization()
+        public WaterCustomization()
         {
             InitializeComponent();
             SmallRadioButton.Checked += OnSize_Checked;
@@ -36,7 +35,7 @@ namespace PointOfSale.Customization_Screens
         /// <param name="args">Event argument.</param>
         private void OnSize_Checked(object sender, RoutedEventArgs args)
         {
-            if (DataContext is CowboyCoffee pan)
+            if (DataContext is Water pan)
             {
                 if (sender is RadioButton rb)
                 {

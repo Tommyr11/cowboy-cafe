@@ -17,11 +17,11 @@ using Size = CowboyCafe.Data.Size;
 namespace PointOfSale.Customization_Screens
 {
     /// <summary>
-    /// Interaction logic for CowboyCoffeeCustomization.xaml
+    /// Interaction logic for TexasTea.xaml
     /// </summary>
-    public partial class CowboyCoffeeCustomization : UserControl
+    public partial class TexasTeaCustomization : UserControl
     {
-        public CowboyCoffeeCustomization()
+        public TexasTeaCustomization()
         {
             InitializeComponent();
             SmallRadioButton.Checked += OnSize_Checked;
@@ -36,7 +36,7 @@ namespace PointOfSale.Customization_Screens
         /// <param name="args">Event argument.</param>
         private void OnSize_Checked(object sender, RoutedEventArgs args)
         {
-            if (DataContext is CowboyCoffee pan)
+            if (DataContext is TexasTea pan)
             {
                 if (sender is RadioButton rb)
                 {

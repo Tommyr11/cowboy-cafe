@@ -4,11 +4,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class BakedBeans : Side
+    public class BakedBeans : Side, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// To string for Baked Beans
         /// </summary>
@@ -25,6 +27,21 @@ namespace CowboyCafe.Data
                     return "Small Baked Beans";
                 default:
                     throw new NotImplementedException("Unknown size");
+            }
+        }
+        private Size size = Size.Small;
+        /// <summary>
+        /// The Size of the Side
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                ToString();
+
             }
         }
         /// <summary>
