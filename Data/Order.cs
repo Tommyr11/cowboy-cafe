@@ -18,7 +18,15 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Subtotal for the order
         /// </summary>
-        public double Subtotal => subtotal;
+        public double Subtotal
+        {
+            get { return subtotal; }
+            set
+            {
+                subtotal = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            }
+        }
         /// <summary>
         /// Private backing to keep track of the last order number
         /// </summary>
@@ -79,6 +87,7 @@ namespace CowboyCafe.Data
             InvokePropertyChanged();
         }
         /// <summary>
+        /// Author: Zachary
         /// This method assists in updating the subtotal for changing sizes
         /// </summary>
         /// <param name="i">The item</param>
@@ -103,12 +112,16 @@ namespace CowboyCafe.Data
             }
             InvokePropertyChanged();
         }
+        /// <summary>
+        /// Author: Zachary
+        /// A helper funtion to invoke the following properties being changed
+        /// </summary>
         public void InvokePropertyChanged()
         {
             /* Invoke all events to ensure you don't miss anything */
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Prices"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
             
         }
     }

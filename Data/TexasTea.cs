@@ -89,7 +89,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// bool for if drink has ice
         /// </summary>
-        private bool ice = false;
+        private bool ice = true;
         public override bool Ice
         {
             get { return ice; }
