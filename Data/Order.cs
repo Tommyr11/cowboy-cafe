@@ -87,7 +87,7 @@ namespace CowboyCafe.Data
             InvokePropertyChanged();
         }
         /// <summary>
-        /// Author: Zachary
+        /// Author: Zachary Brunner
         /// This method assists in updating the subtotal for changing sizes
         /// </summary>
         /// <param name="i">The item</param>
@@ -113,7 +113,7 @@ namespace CowboyCafe.Data
             InvokePropertyChanged();
         }
         /// <summary>
-        /// Author: Zachary
+        /// Author: Zachary Brunner
         /// A helper funtion to invoke the following properties being changed
         /// </summary>
         public void InvokePropertyChanged()
