@@ -20,8 +20,10 @@ namespace PointOfSale.Customization_Screens
     /// </summary>
     public partial class WaterCustomization : UserControl
     {
-        public WaterCustomization()
+        private Order order;
+        public WaterCustomization(object dc)
         {
+            order = (Order)dc;
             InitializeComponent();
             SmallRadioButton.Checked += OnSize_Checked;
             MediumRadioButton.Checked += OnSize_Checked;
@@ -35,25 +37,41 @@ namespace PointOfSale.Customization_Screens
         /// <param name="args">Event argument.</param>
         private void OnSize_Checked(object sender, RoutedEventArgs args)
         {
+            Size s2 = Size.Small;
+            Size s3;
             if (DataContext is Water pan)
             {
+                s3 = pan.Size;
                 if (sender is RadioButton rb)
                 {
                     switch (rb.Tag)
                     {
                         case "Small":
                             pan.Size = Size.Small;
+                            s2 = Size.Small;
                             break;
                         case "Medium":
                             pan.Size = Size.Medium;
+                            s2 = Size.Medium;
                             break;
                         case "Large":
                             pan.Size = Size.Large;
+                            s2 = Size.Large;
                             break;
                         default:
                             throw new NotImplementedException("Size not Avialable");
                     }
                 }
+                Water b = new Water();
+                if (s3 == Size.Medium)
+                {
+                    b.Size = Size.Medium;
+                }
+                else if (s3 == Size.Large)
+                {
+                    b.Size = Size.Large;
+                }
+                order.subtotalHelperFunction(b, s2);
             }
         }
     }

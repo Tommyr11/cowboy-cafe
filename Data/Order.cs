@@ -51,6 +51,7 @@ namespace CowboyCafe.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
  
         }
+        
         /// <summary>
         /// Removes an item from the items list
         /// </summary>
@@ -75,6 +76,40 @@ namespace CowboyCafe.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             }
+            InvokePropertyChanged();
+        }
+        /// <summary>
+        /// This method assists in updating the subtotal for changing sizes
+        /// </summary>
+        /// <param name="i">The item</param>
+        /// <param name="new_size">The size the item is suppose to be</param>
+        public void subtotalHelperFunction(IOrderItem i, Size new_size)
+        {
+            Side s;
+            Drink d;
+
+            subtotal -= i.Price;
+            if (i is Side)
+            {
+                s = (Side)i;
+                s.Size = new_size;
+                subtotal += s.Price;
+            }
+            else
+            {
+                d = (Drink)i;
+                d.Size = new_size;
+                subtotal += d.Price;
+            }
+            InvokePropertyChanged();
+        }
+        public void InvokePropertyChanged()
+        {
+            /* Invoke all events to ensure you don't miss anything */
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Prices"));
+            
         }
     }
 }

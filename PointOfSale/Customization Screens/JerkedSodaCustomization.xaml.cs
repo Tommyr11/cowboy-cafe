@@ -21,8 +21,10 @@ namespace PointOfSale.Customization_Screens
     /// </summary>
     public partial class JerkedSodaCustomization : UserControl
     {
-        public JerkedSodaCustomization()
+        private Order order;
+        public JerkedSodaCustomization(object dc)
         {
+            order = (Order)dc;
             InitializeComponent();
             SmallRadioButton.Checked += OnSize_Checked;
             MediumRadioButton.Checked += OnSize_Checked;
@@ -36,25 +38,41 @@ namespace PointOfSale.Customization_Screens
     
         private void OnSize_Checked(object sender, RoutedEventArgs args)
         {
+            Size s2 = Size.Small;
+            Size s3;
             if (DataContext is JerkedSoda pan)
             {
+                s3 = pan.Size;
                 if (sender is RadioButton rb)
                 {
                     switch (rb.Tag)
                     {
                         case "Small":
                             pan.Size = Size.Small;
+                            s2 = Size.Small;
                             break;
                         case "Medium":
                             pan.Size = Size.Medium;
+                            s2 = Size.Medium;
                             break;
                         case "Large":
                             pan.Size = Size.Large;
+                            s2 = Size.Large;
                             break;
                         default:
                             throw new NotImplementedException("Size not Avialable");
                     }
                 }
+                JerkedSoda b = new JerkedSoda();
+                if (s3 == Size.Medium)
+                {
+                    b.Size = Size.Medium;
+                }
+                else if (s3 == Size.Large)
+                {
+                    b.Size = Size.Large;
+                }
+                order.subtotalHelperFunction(b, s2);
             }
         }
         private void OnFlavor_Checked(object sender, RoutedEventArgs args)
@@ -81,7 +99,7 @@ namespace PointOfSale.Customization_Screens
                             pan.Flavor = SodaFlavor.RootBeer;
                             break;
                         default:
-                            throw new NotImplementedException("Size not Avialable");
+                            throw new NotImplementedException("Flavor not Avialable");
                     }
                 }
             }

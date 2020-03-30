@@ -39,7 +39,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 var item = new JerkedSoda();
-                var screen = new JerkedSodaCustomization();
+                var screen = new JerkedSodaCustomization(order);
                 screen.DataContext = item;
                 order.Add(item);
                 orderControl?.SwapScreen(screen);
@@ -56,7 +56,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 var item = new TexasTea();
-                var screen = new TexasTeaCustomization();
+                var screen = new TexasTeaCustomization(order);
                 screen.DataContext = item;
                 order.Add(item);
                 orderControl?.SwapScreen(screen);
@@ -73,7 +73,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 var item = new CowboyCoffee();
-                var screen = new CowboyCoffeeCustomization();
+                var screen = new CowboyCoffeeCustomization(order);
                 screen.DataContext = item;
                 order.Add(item);
                 orderControl?.SwapScreen(screen);
@@ -90,7 +90,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 var item = new Water();
-                var screen = new WaterCustomization();
+                var screen = new WaterCustomization(order);
                 screen.DataContext = item;
                 order.Add(item);
                 orderControl?.SwapScreen(screen);
@@ -107,7 +107,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 var item = new ChiliCheeseFries();
-                var screen = new ChiliCheeseFriesCustomization();
+                var screen = new ChiliCheeseFriesCustomization(order);
                 screen.DataContext = item;
                 order.Add(item);
                 orderControl?.SwapScreen(screen);
@@ -124,7 +124,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 var item = new CornDodgers();
-                var screen = new CornDodgersCustomization();
+                var screen = new CornDodgersCustomization(order);
                 screen.DataContext = item;
                 order.Add(item);
                 orderControl?.SwapScreen(screen);
@@ -141,7 +141,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 var item = new PanDeCampo();
-                var screen = new PanDeCampoCustomization();
+                var screen = new PanDeCampoCustomization(order);
                 screen.DataContext = item;
                 order.Add(item);
                 orderControl?.SwapScreen(screen);
@@ -158,7 +158,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 var item = new BakedBeans();
-                var screen = new BakedBeansCustomization();
+                var screen = new BakedBeansCustomization(order);
                 screen.DataContext = item;
                 order.Add(item);
                 orderControl?.SwapScreen(screen);

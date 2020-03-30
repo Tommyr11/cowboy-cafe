@@ -16,11 +16,12 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        <ListBox  Name="PList" ItemsSource="{Binding Path=Items}" Grid.Row="1" HorizontalContentAlignment="Stretch" >
+        <ListBox  Name="PList" ItemsSource="{Binding Path=Items}" SelectionChanged="PList_SelectionChanged" Grid.Row="1" HorizontalContentAlignment="Stretch" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
@@ -31,6 +32,9 @@
                         <TextBlock Text="{Binding}" Grid.Column="0" Grid.Row="0">
                             
                         </TextBlock>
+                        <Button Grid.Column="2" Grid.Row="0" Click="RemoveButton_Click" Background="Red">
+                            X
+                        </Button>
                         <TextBlock Text="{Binding Path = Price, StringFormat=c}" Grid.Column="1" Grid.Row="0" >
 
                         </TextBlock>
