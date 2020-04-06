@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="PointOfSale.TransactionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Final Transaction" FontSize="25">
+            
+        </TextBlock>
+        <ListBox  Name="PList" ItemsSource="{Binding Path=Items}"  Grid.Row="1" HorizontalContentAlignment="Stretch" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding}" Grid.Column="0" Grid.Row="0">
+
+                        </TextBlock>
+                        <TextBlock Text="{Binding Path = Price, StringFormat=c}" Grid.Column="1" Grid.Row="0" >
+
+                        </TextBlock>
+                        <ListView ItemsSource="{Binding Path = SpecialInstructions}" Grid.Column="0" Grid.Row="1">
+
+                        </ListView>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Grid.Row="2" Text="Subtotal"></TextBlock>
+        <TextBlock Grid.Row="2" Text="{Binding Path=Subtotal, StringFormat=c}" HorizontalAlignment="Right"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Order"></TextBlock>
+        <TextBlock Grid.Row="3" Text="{Binding Path=OrderNumber}" HorizontalAlignment="Right"></TextBlock>
+        <StackPanel Orientation="Horizontal" Grid.Row="4">
+            <Button x:Name="CancelButton" Grid.Row="4"  Width="100" Click="CancelButton_Click">Cancel Order</Button>
+            <Button x:Name="PayWithCash" Grid.Row="4"  Width="100" >Cash Transaction</Button>
+            <Button x:Name="PayWithCredit" Grid.Row="4"  Width="100" Click="PayWithCredit_Click" >Credit Transaction</Button>
+            <Button x:Name="AcceptButton" Grid.Row="4"  Width="100" Click="AcceptButton_Click">Accept Order</Button>
+        </StackPanel>
+                    
+        
+    </Grid>
+</UserControl>

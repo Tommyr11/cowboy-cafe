@@ -30,11 +30,11 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Private backing to keep track of the last order number
         /// </summary>
-        static private uint lastordernumber = 1;
+        static private uint lastordernumber = 0;
         /// <summary>
         /// Number for the current order
         /// </summary>
-        public uint OrderNumber => lastordernumber++;
+        public uint OrderNumber => lastordernumber;
         /// <summary>
         /// private backing for items list
         /// </summary>
@@ -47,6 +47,12 @@ namespace CowboyCafe.Data
         ///  Adds an item to the item list
         /// </summary>
         /// <param name="i"></param>
+        /// 
+        public Order()
+        {
+            lastordernumber += 1;
+            
+        }
         public void Add(IOrderItem i)
         {
             items.Add(i);

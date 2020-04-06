@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using PointOfSale.ExtensionMethods;
 
 namespace PointOfSale
 {
@@ -26,44 +27,11 @@ namespace PointOfSale
         /// </summary>
         public MainWindow()
         {
-            var order = new Order();
-            this.DataContext = order;
+           
             InitializeComponent();
 
         }
-        /// <summary>
-        /// For future purposes
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ItemSelection_Click(object sender, RoutedEventArgs e)
-        {
-            Container.Child = new MenuItemSelectionControl();
-        }
-        /// <summary>
-        /// Completes the order and begins a new one
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CompleteOrder_Click(object sender, RoutedEventArgs e)
-        {
-            
-            this.DataContext = new Order();
-        }
-        /// <summary>
-        /// Cancels the order and begins a new one
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CancelOrder_Click(object sender, RoutedEventArgs e)
-        {
-            this.DataContext = new Order();
-
-        }
-        public void SwapScreen(FrameworkElement element)
-        {
-            Container.Child = element;
-        }
+        
     }
 }
 

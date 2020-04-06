@@ -34,7 +34,7 @@ namespace PointOfSale
             {
                 if(sender is ListBox box)
                 {
-                    var ordercontrol = this.FindAncestor<MainWindow>();
+                    var ordercontrol = this.FindAncestor<OrderControl>();
                     if(box.SelectedItem is IOrderItem i)
                     {
                         if(i is AngryChicken)
