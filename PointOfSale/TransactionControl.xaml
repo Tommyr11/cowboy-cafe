@@ -48,7 +48,7 @@
         <TextBlock Grid.Row="3" Text="{Binding Path=OrderNumber}" HorizontalAlignment="Right"></TextBlock>
         <StackPanel Orientation="Horizontal" Grid.Row="4">
             <Button x:Name="CancelButton" Grid.Row="4"  Width="100" Click="CancelButton_Click">Cancel Order</Button>
-            <Button x:Name="PayWithCash" Grid.Row="4"  Width="100" >Cash Transaction</Button>
+            <Button x:Name="PayWithCash" Grid.Row="4"  Width="100" Click="PayWithCash_Click" >Cash Transaction</Button>
             <Button x:Name="PayWithCredit" Grid.Row="4"  Width="100" Click="PayWithCredit_Click" >Credit Transaction</Button>
             <Button x:Name="AcceptButton" Grid.Row="4"  Width="100" Click="AcceptButton_Click">Accept Order</Button>
         </StackPanel>

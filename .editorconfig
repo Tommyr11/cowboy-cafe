@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS1705: Assembly 'CashRegister' with identity 'CashRegister, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' uses 'System.Runtime, Version=4.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' which has a higher version than referenced assembly 'System.Runtime' with identity 'System.Runtime, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
+dotnet_diagnostic.CS1705.severity = warning

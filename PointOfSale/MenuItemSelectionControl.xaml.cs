@@ -26,7 +26,7 @@ namespace PointOfSale
             InitializeComponent();
             
         }
-        public Order order = new Order();
+        
 
         /// <summary>
         /// Adds Jerked Soda to the listview

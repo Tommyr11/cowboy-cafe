@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class Order : INotifyPropertyChanged 
+    public class Order : INotifyPropertyChanged
     {
         /// <summary>
         /// Property changed event variable that signals something was changed
@@ -35,6 +35,57 @@ namespace CowboyCafe.Data
         /// Number for the current order
         /// </summary>
         public uint OrderNumber => lastordernumber;
+        /// <summary>
+        /// 
+        /// </summary>
+        public double subtotalwTax
+        {
+            get
+            {
+                return Subtotal + (Subtotal * .16);
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cash"></param>
+        /// <param name="paid"></param>
+        /// <param name="change"></param>
+        /// <returns></returns>
+        public string Receipt(bool cash, double paid, double change)
+        {
+            string receipt = "";
+            receipt += OrderNumber + "\n";
+            receipt += DateTime.Now.ToString() + "\n\n";
+            foreach (IOrderItem item in Items)
+            {
+                receipt += string.Format("{0}   ${1:#.00}\n", item.ToString(), item.Price);
+                if(item.SpecialInstructions != null)
+                {
+                    foreach (string instruction in item.SpecialInstructions)
+                    {
+                        receipt += "   " + instruction + "\n";
+                    }
+                }
+            }
+            receipt += "\n\n";
+            receipt += string.Format("Subtotal   ${0:#.00}\n", Subtotal);
+            receipt += string.Format("Total      ${0:#.00}\n", subtotalwTax);
+            if (cash)
+            {
+                receipt += string.Format("\nTotal Paid     ${0:#.00}\n", paid);
+                receipt += string.Format("Total Change   ${0:#.00}\n", change);
+                receipt += string.Format("Tendered       ${0:#.00}\n", paid - change);
+                receipt += "CASH TENDERED\n\n";
+            }
+            else
+            {
+                receipt += string.Format("Tendered   ${0:#.00}\n", subtotalwTax);
+                receipt += "CREDIT TENDERED\n\n";
+            }
+            receipt += "------------------------------\n\n";
+            return receipt;
+        }
         /// <summary>
         /// private backing for items list
         /// </summary>
