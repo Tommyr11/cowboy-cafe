@@ -47,30 +47,35 @@ namespace PointOfSale
             FrameworkElement screen = null;
             if(DataContext is Order order)
             {
-                switch (card.ProcessTransaction(order.subtotalwTax))
+                switch (card.ProcessTransaction(order.SubtotalwTax))
                 {
                     case ResultCode.InsufficentFunds:
                         screen = new TransactionControl();
+                        MessageBox.Show("Insufficient funds");
                         screen.DataContext = order;
                         this.Content = screen;
                         break;
                     case ResultCode.ReadError:
                         screen = new TransactionControl();
+                        MessageBox.Show("The card could not be read");
                         screen.DataContext = order;
                         this.Content = screen;
                         break;
                     case ResultCode.UnknownErrror:
                         screen = new TransactionControl();
+                        MessageBox.Show("An unknown error occured");
                         screen.DataContext = order;
                         this.Content = screen;
                         break;
                     case ResultCode.CancelledCard:
                         screen = new TransactionControl();
+                        MessageBox.Show("Card was cancelled");
                         screen.DataContext = order;
                         this.Content = screen;
                         break;
                     case ResultCode.Success:
-                        r.Print(order.Receipt(true, 0, 0));
+                        r.Print(order.Receipt(true, order.SubtotalwTax, 0));
+                        MessageBox.Show("Transaction accepted");
                         screen = new OrderControl();
                         this.Content = screen;
                         break;
@@ -82,7 +87,12 @@ namespace PointOfSale
 
         private void PayWithCash_Click(object sender, RoutedEventArgs e)
         {
-
+            if(DataContext is Order order)
+            {
+                var screen = new CashRegisterModelView(order);
+                this.Content = screen;
+            }
+            
         }
     }
 }

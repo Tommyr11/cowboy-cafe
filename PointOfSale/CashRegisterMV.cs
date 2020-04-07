@@ -13,7 +13,40 @@ namespace PointOfSale
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// cashdrawer variable/instance
+        /// </summary>
         CashDrawer drawer = new CashDrawer();
+
+        /// <summary>
+        /// private backing
+        /// </summary>
+        private double totalValue = 0;
+
+        /// <summary>
+        /// Keeps track of total amount of money in cash register
+        /// </summary>
+        public double TotalValue => totalValue;
+
+        /// <summary>
+        /// property that declares if the user has provided sufficient funds
+        /// </summary>
+        public bool SufficientFunds
+        {
+            get
+            {
+                return TotalValue > TotalOwed;
+            }
+        }
+        /// <summary>
+        /// Property for total money owed
+        /// </summary>
+        public double TotalOwed { get; set; }
+
+        /// <summary>
+        /// count for pennies
+        /// </summary>
+        private int countPennies = 0;
         /// <summary>
         /// Gets or sets the number of pennies in the cash register
         /// </summary>
@@ -27,15 +60,23 @@ namespace PointOfSale
                 var quantity = value - drawer.Pennies;
                 if (quantity > 0)
                 {
+                    totalValue += .01;
+                    countPennies++;
                     drawer.AddCoin(Coins.Penny, quantity);
                 }
                 else
                 {
+                    totalValue -= .01;
+                    countPennies++;
                     drawer.RemoveCoin(Coins.Penny, -quantity);
                 }
                 InvokePropertyChanged("Pennies");
             }
         }
+        /// <summary>
+        /// count for nickels
+        /// </summary>
+        private int countNickels = 0;
 
         /// <summary>
         /// Gets or sets the number of pennies in the cash register
@@ -50,15 +91,24 @@ namespace PointOfSale
                 var quantity = value - drawer.Nickels;
                 if (quantity > 0)
                 {
+                    totalValue += .05;
+                    countNickels++;
                     drawer.AddCoin(Coins.Nickel, quantity);
                 }
                 else
                 {
+                    totalValue -= .05;
+                    countNickels++;
                     drawer.RemoveCoin(Coins.Nickel, -quantity);
                 }
                 InvokePropertyChanged("Nickels");
             }
         }
+
+        /// <summary>
+        /// count for dimes
+        /// </summary>
+        private int countDimes = 0;
 
         /// <summary>
         /// Gets or sets the number of pennies in the cash register
@@ -73,15 +123,24 @@ namespace PointOfSale
                 var quantity = value - drawer.Dimes;
                 if (quantity > 0)
                 {
+                    totalValue += .10;
+                    countDimes++;
                     drawer.AddCoin(Coins.Dime, quantity);
                 }
                 else
                 {
+                    totalValue -= .10;
+                    countDimes++;
                     drawer.RemoveCoin(Coins.Dime, -quantity);
                 }
                 InvokePropertyChanged("Dimes");
             }
         }
+
+        /// <summary>
+        /// count for quarters
+        /// </summary>
+        private int countQuarters = 0;
         /// <summary>
         /// Gets or sets the number of pennies in the cash register
         /// </summary>
@@ -95,15 +154,24 @@ namespace PointOfSale
                 var quantity = value - drawer.Quarters;
                 if (quantity > 0)
                 {
+                    totalValue += .25;
+                    countQuarters++;
                     drawer.AddCoin(Coins.Quarter, quantity);
                 }
                 else
                 {
+                    totalValue -= .25;
+                    countQuarters++;
                     drawer.RemoveCoin(Coins.Quarter, -quantity);
                 }
                 InvokePropertyChanged("Pennies");
             }
         }
+
+        /// <summary>
+        /// count for half dollar
+        /// </summary>
+        private int countHalfDollars = 0;
         /// <summary>
         /// Gets or sets the number of pennies in the cash register
         /// </summary>
@@ -117,15 +185,24 @@ namespace PointOfSale
                 var quantity = value - drawer.HalfDollars;
                 if (quantity > 0)
                 {
+                    totalValue += .5;
+                    countHalfDollars++;
                     drawer.AddCoin(Coins.HalfDollar, quantity);
                 }
                 else
                 {
+                    totalValue -= .5;
+                    countHalfDollars++;
                     drawer.RemoveCoin(Coins.HalfDollar, -quantity);
                 }
                 InvokePropertyChanged("HalfDollars");
             }
         }
+
+        /// <summary>
+        /// count for dollars
+        /// </summary>
+        private int countDollars = 0;
         /// <summary>
         /// Gets or sets the number of pennies in the cash register
         /// </summary>
@@ -139,15 +216,24 @@ namespace PointOfSale
                 var quantity = value - drawer.Dollars;
                 if (quantity > 0)
                 {
+                    totalValue += 1;
+                    countDollars++;
                     drawer.AddCoin(Coins.Dollar, quantity);
                 }
                 else
                 {
+                    totalValue -= 1;
+                    countDollars++;
                     drawer.RemoveCoin(Coins.Dollar, -quantity);
                 }
                 InvokePropertyChanged("Dollars");
             }
         }
+
+        /// <summary>
+        /// count for ones
+        /// </summary>
+        private int countOnes = 0;
         /// <summary>
         /// Gets or sets the number of Fiftys in the cash register
         /// </summary>
@@ -161,15 +247,24 @@ namespace PointOfSale
                 var quantity = value - drawer.Ones;
                 if (quantity > 0)
                 {
+                    totalValue += 1;
+                    countOnes++;
                     drawer.AddBill(Bills.One, quantity);
                 }
                 else
                 {
+                    totalValue -= 1;
+                    countOnes++;
                     drawer.RemoveBill(Bills.One, -quantity);
                 }
                 InvokePropertyChanged("Ones");
             }
         }
+
+        /// <summary>
+        /// count for twos
+        /// </summary>
+        private int countTwos = 0;
         /// <summary>
         /// Gets or sets the number of Fiftys in the cash register
         /// </summary>
@@ -183,16 +278,24 @@ namespace PointOfSale
                 var quantity = value - drawer.Twos;
                 if (quantity > 0)
                 {
+                    totalValue += 2;
+                    countTwos++;
                     drawer.AddBill(Bills.Two, quantity);
                 }
                 else
                 {
+                    totalValue -= 2;
+                    countTwos++;
                     drawer.RemoveBill(Bills.Two, -quantity);
                 }
                 InvokePropertyChanged("Twos");
             }
         }
 
+        /// <summary>
+        /// count for fives
+        /// </summary>
+        private int countFives = 0;
         /// <summary>
         /// Gets or sets the number of Fiftys in the cash register
         /// </summary>
@@ -206,16 +309,21 @@ namespace PointOfSale
                 var quantity = value - drawer.Fives;
                 if (quantity > 0)
                 {
+                    totalValue += 5;
+                    countFives++;
                     drawer.AddBill(Bills.Five, quantity);
                 }
                 else
                 {
+                    totalValue -= 5;
+                    countFives++;
                     drawer.RemoveBill(Bills.Five, -quantity);
                 }
                 InvokePropertyChanged("Fives");
             }
         }
 
+        private int countTens = 0;
         /// <summary>
         /// Gets or sets the number of Fiftys in the cash register
         /// </summary>
@@ -229,17 +337,21 @@ namespace PointOfSale
                 var quantity = value - drawer.Tens;
                 if (quantity > 0)
                 {
+                    totalValue += 10;
+                    countTens++;
                     drawer.AddBill(Bills.Ten, quantity);
                 }
                 else
                 {
+                    totalValue -= 10;
+                    countTens++;
                     drawer.RemoveBill(Bills.Ten, -quantity);
                 }
                 InvokePropertyChanged("Tens");
             }
         }
 
-
+        private int countTwenties = 0;
         /// <summary>
         /// Gets or sets the number of pennies in the cash register
         /// </summary>
@@ -253,16 +365,21 @@ namespace PointOfSale
                 var quantity = value - drawer.Twenties;
                 if (quantity > 0)
                 {
+                    totalValue += 20;
+                    countTwenties++;
                     drawer.AddBill(Bills.Twenty, quantity);
                 }
                 else
                 {
+                    totalValue -= 20;
+                    countTwenties++;
                     drawer.RemoveBill(Bills.Twenty, -quantity);
                 }
                 InvokePropertyChanged("Twenties");
             }
         }
 
+        private int countFiftys = 0;
         /// <summary>
         /// Gets or sets the number of Fiftys in the cash register
         /// </summary>
@@ -276,16 +393,21 @@ namespace PointOfSale
                 var quantity = value - drawer.Fifties;
                 if (quantity > 0)
                 {
+                    totalValue += 50;
+                    countFiftys++;
                     drawer.AddBill(Bills.Fifty, quantity);
                 }
                 else
                 {
+                    totalValue -= 50;
+                    countFiftys++;
                     drawer.RemoveBill(Bills.Fifty, -quantity);
                 }
                 InvokePropertyChanged("Fiftys");
             }
         }
 
+        private int countHundreds = 0;
         /// <summary>
         /// Gets or sets the number of Fiftys in the cash register
         /// </summary>
@@ -299,10 +421,14 @@ namespace PointOfSale
                 var quantity = value - drawer.Hundreds;
                 if (quantity > 0)
                 {
+                    totalValue += 100;
+                    countHundreds++;
                     drawer.AddBill(Bills.Hundred, quantity);
                 }
                 else
                 {
+                    totalValue -= 100;
+                    countHundreds++;
                     drawer.RemoveBill(Bills.Hundred, -quantity);
                 }
                 InvokePropertyChanged("Hundreds");

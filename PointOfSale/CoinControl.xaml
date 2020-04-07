@@ -19,10 +19,10 @@
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
             <Border BorderThickness="1" BorderBrush="Goldenrod" CornerRadius="50" Background="Gold" Margin="-16 0" Grid.Column="1">
-                <TextBlock Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControl}}, Path=Denomination}"/>
+                <TextBlock Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControl}}, Path=Denomination}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Border>
             <Button Grid.Row="1" Grid.Column="0" Click="OnDecreaseClicked">-</Button>
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControl}}, Path=Quantity}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControl}}, Path=Quantity}" ></TextBlock>
             <Button Grid.Row="1" Grid.Column="2" Click="OnIncreaseClicked">+</Button>
         </Grid>
     </Border>

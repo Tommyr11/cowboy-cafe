@@ -10,6 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CashRegister;
+using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace PointOfSale
 {
@@ -18,9 +21,25 @@ namespace PointOfSale
     /// </summary>
     public partial class CashRegisterModelView : UserControl
     {
-        public CashRegisterModelView()
+        
+        public CashRegisterModelView(Order order)
         {
+            
             InitializeComponent();
+            this.DataContext = order;
+            
         }
+
+        private void AcceptOrder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CancelOrder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
     }
 }

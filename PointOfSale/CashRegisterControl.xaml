@@ -5,10 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="850">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
@@ -26,7 +27,11 @@
             <local:BillControl Denomination="Ten" Quantity="{Binding Path=Tens}"/>
             <local:BillControl Denomination="Twenty" Quantity="{Binding Path=Twenty}"/>
             <local:BillControl Denomination="Fifty" Quantity="{Binding Path=Fifty}"/>
-            <local:BillControl Denomination="Hundred" Quantity="{Binding Path=Hundred}"/>
-        </StackPanel>    
+            <local:BillControl Denomination="Hundred" Quantity="{Binding Path=Hundred}" />
+        </StackPanel>
+        <TextBlock Text="{Binding Path=Subtotal, StringFormat=c}" HorizontalAlignment="Center" Grid.Row="2" FontSize="14"></TextBlock>
+        <TextBlock Text="{Binding Path=Quantity, StringFormat=c}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="2" FontSize="14"></TextBlock>
+        <Button x:Name="CancelOrder" HorizontalAlignment="Left" Grid.Row="2" Click="CancelOrder_Click">Cancel Order</Button>
+        <Button x:Name="AcceptOrder" HorizontalAlignment="Right" Grid.Row="2" Click="AcceptOrder_Click">Accept Order</Button>
     </Grid>
 </UserControl>

@@ -38,7 +38,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// 
         /// </summary>
-        public double subtotalwTax
+        public double SubtotalwTax
         {
             get
             {
@@ -70,7 +70,7 @@ namespace CowboyCafe.Data
             }
             receipt += "\n\n";
             receipt += string.Format("Subtotal   ${0:#.00}\n", Subtotal);
-            receipt += string.Format("Total      ${0:#.00}\n", subtotalwTax);
+            receipt += string.Format("Total      ${0:#.00}\n", SubtotalwTax);
             if (cash)
             {
                 receipt += string.Format("\nTotal Paid     ${0:#.00}\n", paid);
@@ -80,7 +80,7 @@ namespace CowboyCafe.Data
             }
             else
             {
-                receipt += string.Format("Tendered   ${0:#.00}\n", subtotalwTax);
+                receipt += string.Format("Tendered   ${0:#.00}\n", SubtotalwTax);
                 receipt += "CREDIT TENDERED\n\n";
             }
             receipt += "------------------------------\n\n";
