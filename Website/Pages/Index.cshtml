@@ -1,0 +1,88 @@
+﻿@page
+@model IndexModel
+@using CowboyCafe.Data;
+
+@{
+    ViewData["Title"] = "CowboyCafe";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Cowboy Cafe!</h1>
+    <p>We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.</p>
+</div>
+<div class="Entrees">
+    <h2>Entrees</h2>
+    <div class="menu-selection">
+        <ul>
+            <li>
+                @foreach (Entree e in Menu.Entrees())
+                {
+                    <h3>@e.ToString()</h3>
+                <li>@String.Format("Price: ${0:0.00}", e.Price)</li>
+                <li>@String.Format("Calories: {0}", e.Calories)</li>
+                }
+            </li>
+
+            </ul>
+    </div>
+</div>
+<div class="Sides">
+    <h2>Sides</h2>
+    <div class="menu-selection">
+        <ul>
+            <li>
+                @foreach (Side e in Menu.Sides())
+                {
+                    <h3>@e.ToString()</h3>
+                <li>@String.Format("Price: ${0:0.00}", e.Price)</li>
+                <li>@String.Format("Calories: {0}",e.Calories)</li>
+            }
+                @foreach (Side e in Menu.Sides())
+                {
+                    e.Size = Size.Medium;
+                    <h3>@e.ToString()</h3>
+                    <li>@String.Format("Price: ${0:0.00}", e.Price)</li>
+                    <li>@String.Format("Calories: {0}", e.Calories)</li>
+                }
+                @foreach (Side e in Menu.Sides())
+                {
+                    e.Size = Size.Large;
+                    <h3>@e.ToString()</h3>
+                    <li>@String.Format("Price: ${0:0.00}", e.Price)</li>
+                    <li>@String.Format("Calories: {0}", e.Calories)</li>
+                }
+
+                </li>
+            </ul>
+    </div>
+</div>
+<div class="Drinks">
+<h2>Drinks</h2>
+    <div class="menu-selection">
+        <ul>
+            <li>
+                @foreach (Drink e in Menu.Drinks())
+                {
+                    <h3>@e.ToString()</h3>
+                <li>@String.Format("Price: ${0:0.00}", e.Price)</li>
+                <li>@String.Format("Calories: {0}", e.Calories)</li>
+            }
+                @foreach (Drink e in Menu.Drinks())
+                {
+                    e.Size = Size.Medium;
+                    <h3>@e.ToString()</h3>
+                    <li>@String.Format("Price: ${0:0.00}", e.Price)</li>
+                    <li>@String.Format("Calories: {0}", e.Calories)</li>
+                }
+                @foreach (Drink e in Menu.Drinks())
+                {
+                    e.Size = Size.Large;
+                    <h3>@e.ToString()</h3>
+                    <li>@String.Format("Price: ${0:0.00}", e.Price)</li>
+                    <li>@String.Format("Calories: {0}", e.Calories)</li>
+                }
+                </li>
+            </ul>
+    </div>
+
+</div>
