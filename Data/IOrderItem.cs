@@ -14,6 +14,7 @@ namespace CowboyCafe.Data
         /// Price of the item
         /// </summary>
         double Price { get; }
-       
+        
+        
     }
 }

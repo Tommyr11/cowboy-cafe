@@ -45,6 +45,8 @@ namespace CowboyCafe.Data
                 return 5.99;
             }
         }
+        
+
 
         /// <summary>
         /// The calories of the sandwich

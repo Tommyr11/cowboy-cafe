@@ -23,6 +23,7 @@ namespace CowboyCafe.Data
         /// Gets the calories of the Drink
         /// </summary>
         public abstract uint Calories { get; }
+        
 
         /// <summary>
         /// SpecialInstructions for the drink
