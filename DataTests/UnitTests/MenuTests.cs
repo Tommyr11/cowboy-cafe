@@ -147,5 +147,20 @@ namespace CowboyCafe.DataTests.UnitTests
         {
             Assert.Equal(exp, Menu.FilterByPrice(Menu.All(), min, max).Count());
         }
+        [Theory]
+        [InlineData(null,15)]
+        [InlineData(new string[] {"Drink","Entree" }, 11)]
+        [InlineData(new string[] { "Drink", "Side" }, 8)]
+        [InlineData(new string[] { "Side" }, 4)]
+
+        public void ShouldFilterCategories(string [] options, int expected)
+        {
+            var item = Menu.All();
+            var results = Menu.FilterByCategory(Menu.All(), options);
+            if(results is List<IOrderItem> val)
+            {
+                Assert.Equal(expected, val.Count);
+            }
+        }
     }
 }
